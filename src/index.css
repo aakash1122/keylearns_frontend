@@ -1,0 +1,133 @@
+/* import */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+/* variables */
+:root {
+  --main-bg-color: #1da7da;
+  --accent-color: #52d58b;
+}
+
+/* global */
+a{
+  text-decoration: none !important;
+}
+/*  */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+/* Nav Bar */
+.navbar.navbar-expand-lg {
+  font-size: 18px;
+  padding: 20px 8px;
+  background: #FF8449 !important
+  /* background-image: linear-gradient(to right bottom, #ef6c00, #f37b06, #f88a10, #fb991b, #ffa726); */
+}
+.navbar.navbar-expand-lg a{
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  font-weight: bold;
+  text-decoration: none !important;
+  color: #e6e9e8 !important
+}
+.navbar.navbar-expand-lg .navbar-nav{
+  margin-left: auto
+}
+/*  */
+
+
+/* Landing Page */
+
+#landingPage .hero{
+  margin: 0
+}
+
+#landingPage .hero{
+  min-height: 70vh !important;
+  background: linear-gradient(#e74c3ccf, #e74c3ccf), url("https://hapara.com/wp-content/uploads/Measuring-Impact-The-Transition-to-Digital-Learning-02.png");
+  background-size: cover;
+  background-repeat: no-repeat;   
+  /* background: #57741f; */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+}
+
+#landingPage .left h1{
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: bold
+}
+
+#landingPage span.keylearns{
+  font-weight: bolder;
+  font-family: cursive;
+  letter-spacing: 4px
+}
+
+.row .left{
+  /* border-right: 3px solid #e5e5e5; */
+  /* background: linear-gradient(#0000008c, #0000008c), url("https://media.giphy.com/media/Gf5pzZxHdyTcs/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat */
+}
+
+/* Login page */
+#login{
+  text-align: start;
+  padding: 20px;
+  background: #26272787
+}
+
+#login  input{
+  width: 450px;
+}
+
+#login button {
+  background: #34495e;
+  border-color: #34495e !important
+}
+/*  */
+
+/* offering */
+.offering .offer{
+  border: 1px solid #8209ce55;
+  padding: 25px 12px;
+  transition: all 0.5s
+}
+
+.offering .offer i{
+  color: #ff5252
+}
+
+.offering .offer:hover{
+  transform: scale(1.1)
+}
+
+.bangla{
+  background: #c44569eb;
+  letter-spacing: 4px;
+  font-family: monospace
+}
+
+/* Sign up */
+#signupForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+}
+
+#signupForm form{
+  width: 450px  !important;
+  margin: auto
+}
+
+#signupForm form button{
+  background: #aa00ff;
+  letter-spacing: 3px;
+  font-weight: bolder
+}
