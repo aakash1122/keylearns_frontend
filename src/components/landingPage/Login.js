@@ -30,7 +30,7 @@ export default class Login extends Component {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json"
         },
-        withCredentials: true
+        withCredentials: false
       })
       .then(data => console.log(data))
       .catch(err => console.log("error: " + err));
