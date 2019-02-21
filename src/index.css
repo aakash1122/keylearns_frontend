@@ -24,7 +24,7 @@ body {
 .navbar.navbar-expand-lg {
   font-size: 18px;
   padding: 20px 8px;
-  background: #FF8449 !important
+  /* background: #FF8449 !important */
   /* background-image: linear-gradient(to right bottom, #ef6c00, #f37b06, #f88a10, #fb991b, #ffa726); */
 }
 .navbar.navbar-expand-lg a{
@@ -32,7 +32,7 @@ body {
   padding: 3px 8px;
   font-weight: bold;
   text-decoration: none !important;
-  color: #e6e9e8 !important
+  color: #6c6c6c !important
 }
 .navbar.navbar-expand-lg .navbar-nav{
   margin-left: auto
@@ -51,7 +51,6 @@ body {
   background: linear-gradient(#e74c3ccf, #e74c3ccf), url("https://hapara.com/wp-content/uploads/Measuring-Impact-The-Transition-to-Digital-Learning-02.png");
   background-size: cover;
   background-repeat: no-repeat;   
-  /* background: #57741f; */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
 }
 
@@ -67,12 +66,14 @@ body {
   letter-spacing: 4px
 }
 
-.row .left{
-  /* border-right: 3px solid #e5e5e5; */
-  /* background: linear-gradient(#0000008c, #0000008c), url("https://media.giphy.com/media/Gf5pzZxHdyTcs/giphy.gif");
-  background-size: cover;
-  background-repeat: no-repeat */
-}
+/* .row .left{
+  border-right: 3px solid #e5e5e5;
+background: #FF9671
+
+} */
+/* .row .right{
+  background: #1da7da
+} */
 
 /* Login page */
 #login{
@@ -107,7 +108,7 @@ body {
 }
 
 .bangla{
-  background: #c44569eb;
+  background: #433d1e;
   letter-spacing: 4px;
   font-family: monospace
 }
