@@ -26,6 +26,10 @@ export default class Login extends Component {
     console.log(this.state);
     axios
       .post("https://keylearns.herokuapp.com/login", User, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        },
         withCredentials: true
       })
       .then(data => console.log(data))
