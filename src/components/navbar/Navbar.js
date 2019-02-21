@@ -23,9 +23,7 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <Link to="/courses">Courses</Link>
-              <a className="nav-item nav-link" href="#">
-                Dashboard
-              </a>
+              <Link to="/dashboard">Dashboard</Link>
               {/* <button className="btn btn-outline-primary">
                 <Link to="/addcourse">Add Course</Link>
               </button> */}

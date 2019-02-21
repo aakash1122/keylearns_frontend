@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
-
 export default class Login extends Component {
   state = {
     username: "",
@@ -23,9 +21,9 @@ export default class Login extends Component {
     };
 
     e.preventDefault();
-    console.log(this.state);
+    console.log(User);
     axios
-      .post("https://keylearns.herokuapp.com/login", User, {
+      .post("https://keylearns.herokuapp.com/login/", User, {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json"
