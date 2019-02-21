@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 export default class Login extends Component {
   state = {
@@ -25,12 +25,16 @@ export default class Login extends Component {
     e.preventDefault();
     console.log(this.state);
     axios
-      .post("https://keylearns.herokuapp.com/login", User, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json"
-        }
-      })
+      .post(
+        "https://keylearns.herokuapp.com/login",
+        User
+        //  {
+        //   headers: {
+        //     "Access-Control-Allow-Origin": "*",
+        //     "Content-Type": "application/json"
+        //   }
+        // }
+      )
       .then(data => console.log(data))
       .catch(err => console.log("error: " + err));
   };
