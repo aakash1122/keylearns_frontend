@@ -25,12 +25,7 @@ export default class Login extends Component {
     e.preventDefault();
     console.log(this.state);
     axios
-      .post("https://keylearns.herokuapp.com/login", User, {
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        },
-        withCredentials: false
-      })
+      .post("https://keylearns.herokuapp.com/login", User)
       .then(data => console.log(data))
       .catch(err => console.log("error: " + err));
   };
