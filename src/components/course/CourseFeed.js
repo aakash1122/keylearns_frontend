@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "../heading/Heading";
-import Spinner from "../loadingSpinner/Spinner";
+import CourseLoader from "../loadingSpinner/ContentLoader";
 
 export default function PostFeed({ courses }) {
   const info = {
@@ -40,7 +40,9 @@ export default function PostFeed({ courses }) {
           {courseList}
         </div>
       ) : (
-        <Spinner type="bars" color="#ff4757" />
+        <div className="container">
+          <CourseLoader />
+        </div>
       )}
     </React.Fragment>
   );
