@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Heading from "../heading/Heading";
+import Spinner from "../loadingSpinner/Spinner";
 
 export default function PostFeed({ courses }) {
   const info = {
@@ -31,10 +31,17 @@ export default function PostFeed({ courses }) {
       </div>
     );
   });
+  console.log(courseList.length);
   return (
     <React.Fragment>
       <Heading info={info} />
-      <div className="container d-flex flex-wrap flex-column">{courseList}</div>
+      {courses.length ? (
+        <div className="container d-flex flex-wrap flex-column">
+          {courseList}
+        </div>
+      ) : (
+        <Spinner type="bars" color="#ff4757" />
+      )}
     </React.Fragment>
   );
 }

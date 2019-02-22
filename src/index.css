@@ -12,7 +12,11 @@
 a{
   text-decoration: none !important;
 }
-/*  */
+/*  spinner*/
+.spinner{
+  display: flex;
+  justify-content: center
+}
 
 .jumbotron-fluid{
   background: linear-gradient(270deg, #E84118, #AB3B85);
