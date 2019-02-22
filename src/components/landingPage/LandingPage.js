@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Typist from "react-typist";
 import "../../../node_modules/react-typist/dist/Typist.css";
-import Login from "./Login";
+import Login from "../login/Login";
 
 export default class LandingPage extends Component {
   render() {
