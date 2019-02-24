@@ -10,33 +10,33 @@ export default function PostFeed({ courses }) {
   const courseList = courses.map(course => {
     return (
       <div className="container" id="course-card" key={course.id}>
-        <div className="row text-dark">
-          <div className="col-4 p-0">
+        <div className="row text-dark p-2">
+          <div className="col-3">
             <img
               className="w-100 h-100"
               src="https://cdn-images-1.medium.com/max/1600/1*H3rm-u6SJiL1IoKIE9OTWg.png"
               alt=""
             />
           </div>
-          <div className="col-8">
-            <div className="course-info p-3">
-              <h3>{course.title.slice(0, 50)}</h3>
-              <p>{course.description.slice(0, 80)}</p>
-              <h4>Price : {course.price}</h4>
-              <p>updated at : {course.updated_at}</p>
-              <button className="btn btn-outline-danger btn-lg">Buy Now</button>
+          <div className="col-7">
+            <div className="course-info">
+              <h5>{course.title.slice(0, 50)}</h5>
+              <p className="courseDesc">{course.description.slice(0, 130)}</p>
+              <button className="btn btn-outline-danger btn-sm">Buy Now</button>
             </div>
+          </div>
+          <div className="col-2 price">
+            <p className="d-inline">Price : {course.price}</p>
           </div>
         </div>
       </div>
     );
   });
-  console.log(courseList.length);
   return (
     <React.Fragment>
       <Heading info={info} />
       {courses.length ? (
-        <div className="container d-flex flex-wrap flex-column">
+        <div className="container d-flex flex-wrap flex-column border-bottom">
           {courseList}
         </div>
       ) : (

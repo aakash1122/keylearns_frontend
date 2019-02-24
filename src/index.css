@@ -150,8 +150,25 @@ background: #FF9671
 /* course feed */
 
 #course-card{
-  background: #f6f7f7;
+  max-height: 150px;
+  width: 1000px;
+  background: #fbfbfb;
   margin: 10px;
+  border-top: 1px solid #e5e5e5
+}
+
+.price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price p{
+  font-weight: bolder;
+  font-style: italic
+}
+.courseDesc{
+  color: #847575eb;
+  font-size: 15px;
 }
 
 /*  */
