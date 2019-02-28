@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,12 +23,19 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <Link to="/courses">Courses</Link>
-              <Link to="/dashboard">Dashboard</Link>
-              {/* <button className="btn btn-outline-primary">
-                <Link to="/addcourse">Add Course</Link>
-              </button> */}
-              <Link to="/">Login</Link>
-              <Link to="/signup">Signup</Link>
+              {props.loggedIn ? (
+                <>
+                  <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/profile">Profile</Link>
+                  <Link to="/logout" onClick={props.logout}>
+                    Log out
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/signup">Signup</Link>
+                </>
+              )}
             </div>
           </div>
         </div>

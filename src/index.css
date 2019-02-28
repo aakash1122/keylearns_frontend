@@ -61,10 +61,11 @@ body {
 
 #landingPage .hero{
   min-height: 70vh !important;
-  background: linear-gradient(#e74c3ccf, #e74c3ccf), url("https://hapara.com/wp-content/uploads/Measuring-Impact-The-Transition-to-Digital-Learning-02.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.644)), url("https://images.pexels.com/photos/68761/pexels-photo-68761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;   
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%); */
 }
 
 #landingPage .left h1{
@@ -169,6 +170,86 @@ background: #FF9671
 .courseDesc{
   color: #847575eb;
   font-size: 15px;
+}
+
+/*  */
+
+/* DashBoard */
+.profile-container {
+  background: linear-gradient(
+    162deg,
+    rgba(113, 20, 252, 1) 30%,
+    rgba(191, 85, 236, 1) 82%
+  );
+  color: #fff;
+  padding: 30px 8px;
+  margin-top: 4rem;
+}
+
+
+.profile-container h3 {
+  color: #ffa85b;
+  margin: 3px;
+}
+
+.profile-container p {
+  margin: 2px
+}
+
+.profile-container img {
+  margin-left: -65px !important;
+  height: 100% !important;
+}
+.profile-container .row {
+  min-height: 300px !important;
+  margin-top: 0 !important;
+}
+
+/* social links */
+.social-links span {
+  color: #fc5c65;
+  transition: all 0.3s;
+}
+.social-links span:hover {
+  color: #a55eea;
+  transform: scale(1.2);
+
+}
+#courseWrapper{
+  padding: 20px 5px;
+  background: #f3f3f3;
+}
+
+.course-heading {
+  padding: 8px;
+  letter-spacing: 3px;
+  border: 1px solid #ee5253;
+  width: 28%;;
+  margin: auto
+}
+
+.course-card{
+  position: relative;
+  height: 220px !important;
+  width: 365px !important;
+}
+
+.course-card img {
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden;
+}
+
+.course-card .course-info{
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.657), rgba(0, 0, 0, 0.657));
+  height: 100%;
+  width: 100%;
 }
 
 /*  */

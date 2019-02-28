@@ -21,7 +21,6 @@ export default class Login extends Component {
     };
 
     e.preventDefault();
-    console.log(User);
     axios
       .post("https://keylearns.herokuapp.com/login/", User, {
         headers: {
@@ -29,7 +28,10 @@ export default class Login extends Component {
           "Content-Type": "application/json"
         }
       })
-      .then(data => console.log(data))
+      .then(data => {
+        console.log("login token: " + data.data.token);
+        this.props.sendToken(data.data.token);
+      })
       .catch(err => console.log("error: " + err));
   };
 

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Typist from "react-typist";
 import "../../../node_modules/react-typist/dist/Typist.css";
 import Login from "../login/Login";
 
-export default class LandingPage extends Component {
-  render() {
-    return (
+export default function LandingPage(props) {
+  return (
+    <div>
       <div id="landingPage">
         <div className="container-fluid row text-center hero">
           <div className="col-md left d-flex justify-content-center align-items-center">
@@ -29,7 +29,8 @@ export default class LandingPage extends Component {
             </Typist>
           </div>
           <div className="col-md right d-flex justify-content-center align-items-center">
-            <Login />
+            {/* login component */}
+            <Login sendToken={props.sendToken} />
           </div>
         </div>
         <section className="offering text-dark">
@@ -82,6 +83,6 @@ export default class LandingPage extends Component {
           <h2 className="text-center">All the courses are in Bangla</h2>
         </section>
       </div>
-    );
-  }
+    </div>
+  );
 }
