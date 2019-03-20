@@ -175,6 +175,11 @@ background: #FF9671
 /*  */
 
 /* DashBoard */
+.dashHeading{
+  color: black;
+  letter-spacing: 3px;
+  font-weight: 800
+}
 .user-image-card{
   height: 200px;
   width: 600px;
@@ -200,22 +205,19 @@ background: #FF9671
 
 .user-image-card .userinfo{
   align-self: center;
-  color: white
+  color: white;
+  padding: 5px;
+  border-left: 6px solid #e17c00
 }
 
 #courseWrapper{
   padding: 20px 5px;
-  background: #f3f3f3;
+  background: #ff6b6b;
 }
-
-.course-heading {
-  padding: 8px;
-  letter-spacing: 3px;
-  border: 1px solid #ee5253;
-  width: 28%;;
-  margin: auto
+.enrolledWrapper{
+  padding: 20px 5px;
+  background: #feca57;
 }
-
 .course-card{
   position: relative;
   height: 220px !important;
@@ -230,14 +232,16 @@ background: #FF9671
 
 .course-card .course-info{
   position: absolute;
+  text-align: center; 
   top: 0;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.657), rgba(0, 0, 0, 0.657));
+  background: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.657));
   height: 100%;
   width: 100%;
+  padding: 5px;
 }
 
 /*  */

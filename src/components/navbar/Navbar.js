@@ -26,7 +26,6 @@ export default function Navbar(props) {
               {props.loggedIn ? (
                 <>
                   <Link to="/dashboard">Dashboard</Link>
-                  <Link to="/profile">Profile</Link>
                   <Link to="/logout" onClick={props.logout}>
                     Log out
                   </Link>

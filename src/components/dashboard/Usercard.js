@@ -11,7 +11,7 @@ export default function Usercard({ user }) {
         />
       </div>
       <div className="userinfo right">
-        <h3>{user.name}</h3>
+        <h4>{user.name}</h4>
         <p>{user.email}</p>
         <p>Username: {user.name}</p>
       </div>

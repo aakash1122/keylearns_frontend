@@ -30,7 +30,7 @@ export default function LandingPage(props) {
           </div>
           <div className="col-md right d-flex justify-content-center align-items-center">
             {/* login component */}
-            <Login sendToken={props.sendToken} />
+            <Login sendToken={props.sendToken} history={props.history} />
           </div>
         </div>
         <section className="offering text-dark">

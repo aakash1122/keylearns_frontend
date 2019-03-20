@@ -29,12 +29,11 @@ export default class Login extends Component {
         }
       })
       .then(data => {
-        console.log("login token: " + data.data.token);
         this.props.sendToken(data.data.token);
+        this.props.history.push("/dashboard");
       })
       .catch(err => console.log("error: " + err));
   };
-
   render() {
     return (
       <div id="login">

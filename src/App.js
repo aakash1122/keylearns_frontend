@@ -24,7 +24,6 @@ class App extends Component {
         loggedIn: true,
         token: localStorage.getItem("jwt")
       });
-      this.getCurrentUser();
     }
     axios
       .get("https://keylearns.herokuapp.com/courses")
@@ -57,20 +56,35 @@ class App extends Component {
 
   setToken = token => {
     localStorage.setItem("jwt", token);
-    this.setState({
-      loggedIn: true,
-      token: localStorage.getItem("jwt", token)
-    });
+    this.setState(
+      {
+        loggedIn: true,
+        token: localStorage.getItem("jwt", token)
+      },
+      () => {
+        this.redirectToDashboard();
+      }
+    );
   };
 
   logout = () => {
     localStorage.removeItem("jwt");
-    this.setState({
-      token: null,
-      loggedIn: false,
-      currentUser: null
-    });
-    return <Redirect from="logout" to="/" />;
+    this.setState(
+      {
+        token: null,
+        loggedIn: false,
+        currentUser: null
+      },
+      () => {
+        window.location.replace("/");
+      }
+    );
+  };
+
+  redirectToDashboard = () => {
+    if (this.state.loggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
   };
 
   render() {
@@ -83,7 +97,9 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={() => <LandingPage sendToken={this.setToken} />}
+                render={props => (
+                  <LandingPage {...props} sendToken={this.setToken} />
+                )}
               />
               <Route path="/signup" component={Signup} />
               <Route path="/addcourse" component={AddCourse} />
@@ -95,7 +111,12 @@ class App extends Component {
               <Route
                 exact
                 path="/dashboard"
-                render={() => <Dashboard user={this.state.currentUser} />}
+                render={() => (
+                  <Dashboard
+                    getUser={this.getCurrentUser}
+                    user={this.state.currentUser}
+                  />
+                )}
               />
             </Switch>
           </div>
