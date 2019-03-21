@@ -33,15 +33,15 @@ export default function LandingPage(props) {
             <Login sendToken={props.sendToken} history={props.history} />
           </div>
         </div>
-        <section className="offering text-dark">
+        {/* offer section */}
+        <section className="offering text-dark pt-5">
           <h1 className="text-center mb-5 mt-2">We are Offering</h1>
           <div className="container">
             <div className="row  text-center">
               <div className="col-md-4">
                 <div className="d-flex flex-column offer">
                   <i className="fas fa-globe-americas fa-3x" />
-                  <h3 className="mb-2">Courses on trending technologies</h3>
-                  <hr />
+                  <h3>Courses on trending technologies</h3>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Eligendi, consequatur voluptas itaque officiis non voluptate
@@ -54,7 +54,6 @@ export default function LandingPage(props) {
                 <div className="d-flex flex-column offer">
                   <i className="fas fa-swatchbook fa-3x" />
                   <h3>Rich Library</h3>
-                  <hr />
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Eligendi, consequatur voluptas itaque officiis non voluptate
@@ -67,7 +66,6 @@ export default function LandingPage(props) {
                 <div className="d-flex flex-column offer">
                   <i className="fas fa-chalkboard-teacher fa-3x" />
                   <h3>Community support</h3>
-                  <hr />
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Eligendi, consequatur voluptas itaque officiis non voluptate
