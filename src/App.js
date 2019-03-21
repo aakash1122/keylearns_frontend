@@ -25,14 +25,6 @@ class App extends Component {
         token: localStorage.getItem("jwt")
       });
     }
-    axios
-      .get("https://keylearns.herokuapp.com/courses")
-      .then(data => {
-        this.setState({
-          courses: data.data.courses
-        });
-      })
-      .catch(err => console.log(err));
   }
 
   getCurrentUser = () => {
@@ -56,15 +48,10 @@ class App extends Component {
 
   setToken = token => {
     localStorage.setItem("jwt", token);
-    this.setState(
-      {
-        loggedIn: true,
-        token: localStorage.getItem("jwt", token)
-      },
-      () => {
-        this.redirectToDashboard();
-      }
-    );
+    this.setState({
+      loggedIn: true,
+      token: localStorage.getItem("jwt", token)
+    });
   };
 
   logout = () => {
@@ -81,10 +68,15 @@ class App extends Component {
     );
   };
 
-  redirectToDashboard = () => {
-    if (this.state.loggedIn) {
-      return <Redirect to="/dashboard" />;
-    }
+  getAllCourses = () => {
+    axios
+      .get("https://keylearns.herokuapp.com/courses")
+      .then(data => {
+        this.setState({
+          courses: data.data.courses
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -106,7 +98,12 @@ class App extends Component {
               <Route
                 exact
                 path="/courses"
-                render={() => <CourseFeed courses={this.state.courses} />}
+                render={() => (
+                  <CourseFeed
+                    courses={this.state.courses}
+                    getAllCourses={this.getAllCourses}
+                  />
+                )}
               />
               <Route
                 exact

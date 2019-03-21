@@ -30,6 +30,7 @@ export default class Login extends Component {
       })
       .then(data => {
         this.props.sendToken(data.data.token);
+        // redirect to dashboard after a succesful login
         this.props.history.push("/dashboard");
       })
       .catch(err => console.log("error: " + err));

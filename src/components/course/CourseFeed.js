@@ -2,12 +2,13 @@ import React from "react";
 import Heading from "../heading/Heading";
 import CourseLoader from "../loadingSpinner/ContentLoader";
 
-export default function PostFeed({ courses }) {
+export default function PostFeed(props) {
   const info = {
     title: "Courses",
     description: "Learn from anywhere, anytime"
   };
-  const courseList = courses.map(course => {
+  props.getAllCourses();
+  const courseList = props.courses.map(course => {
     return (
       <div className="container" id="course-card" key={course.id}>
         <div className="row text-dark p-2">
@@ -35,7 +36,7 @@ export default function PostFeed({ courses }) {
   return (
     <React.Fragment>
       <Heading info={info} />
-      {courses.length ? (
+      {props.courses.length ? (
         <div className="container d-flex flex-wrap flex-column border-bottom">
           {courseList}
         </div>

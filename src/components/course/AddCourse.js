@@ -9,6 +9,13 @@ export default class AddPost extends Component {
     error: ""
   };
 
+  componentWillMount() {
+    // send back to homepage if unauthorized
+    if (!localStorage.getItem("jwt")) {
+      this.props.history.push("/");
+    }
+  }
+
   submitHandler = e => {
     e.preventDefault();
     const formData = new FormData();
