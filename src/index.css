@@ -94,6 +94,12 @@ body {
   background: #dc3545;
   border-color: none !important
 }
+
+#login #create-acc-link{
+  color: #ffeb00;
+  padding: 0 5px;
+  text-transform: uppercase
+}
 /*  */
 
 /* offering */

@@ -74,7 +74,10 @@ export default class Login extends Component {
           </button>
           <p className="mt-3">
             Don't have an account yet?
-            <Link to="/signup">Sign up for free</Link>
+            <Link to="/signup" id="create-acc-link">
+              {" "}
+              Sign up for free
+            </Link>
           </p>
         </form>
       </div>
