@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -22,18 +22,30 @@ export default function Navbar(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link to="/courses">Courses</Link>
+              <NavLink to="/courses" activeClassName="active">
+                Courses
+              </NavLink>
               {props.loggedIn ? (
                 <>
-                  <Link to="/dashboard">Dashboard</Link>
-                  <Link to="/addcourse">Add Course</Link>
-                  <Link to="/logout" onClick={props.logout}>
+                  <NavLink to="/dashboard" activeClassName="active">
+                    Dashboard
+                  </NavLink>
+                  <NavLink to="/addcourse" activeClassName="active">
+                    Add Course
+                  </NavLink>
+                  <NavLink
+                    to="/logout"
+                    activeClassName="active"
+                    onClick={props.logout}
+                  >
                     Log out
-                  </Link>
+                  </NavLink>
                 </>
               ) : (
                 <>
-                  <Link to="/signup">Signup</Link>
+                  <NavLink to="/signup" activeClassName="active">
+                    Signup
+                  </NavLink>
                 </>
               )}
             </div>
