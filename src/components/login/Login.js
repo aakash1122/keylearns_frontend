@@ -22,14 +22,10 @@ export default class Login extends Component {
 
     e.preventDefault();
     axios
-      .post("https://keylearns.herokuapp.com/login/", User, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json"
-        }
-      })
+      .post("https://keylearns.herokuapp.com/login/", User)
       .then(data => {
-        this.props.sendToken(data.data.token);
+        console.log(data);
+        this.props.sendToken(data.data.access);
         // redirect to dashboard after a succesful login
         this.props.history.push("/dashboard");
       })

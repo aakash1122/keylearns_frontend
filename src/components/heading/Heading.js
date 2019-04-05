@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Heading(props) {
-  console.log(props.info);
   return (
     <div>
       <div className="jumbotron jumbotron-fluid">

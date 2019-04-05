@@ -19,20 +19,21 @@ class App extends Component {
 
   componentDidMount() {
     // checking if a session is going on
-    if (localStorage.getItem("jwt")) {
+    if (localStorage.getItem("csrf")) {
       this.setState({
         loggedIn: true,
-        token: localStorage.getItem("jwt")
+        token: localStorage.getItem("csrf")
       });
     }
   }
 
   getCurrentUser = () => {
+    console.log("Bearer " + this.state.token);
     axios
       .get("https://keylearns.herokuapp.com/profile", {
         headers: {
-          token: localStorage.getItem("jwt"),
-          Authorization: `Token ${localStorage.getItem("jwt")}`
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.state.token
         }
       })
       .then(data =>
@@ -47,15 +48,16 @@ class App extends Component {
   };
 
   setToken = token => {
-    localStorage.setItem("jwt", token);
+    console.log("token : " + token);
+    localStorage.setItem("csrf", token);
     this.setState({
       loggedIn: true,
-      token: localStorage.getItem("jwt", token)
+      token: localStorage.getItem("csrf", token)
     });
   };
 
   logout = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("csrf");
     this.setState(
       {
         token: null,

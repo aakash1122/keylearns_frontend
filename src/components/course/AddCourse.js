@@ -95,10 +95,12 @@ export default class AddPost extends Component {
                 placeholder="Post Detail goes here"
               />
             </div>
-            <label htmlFor="exampleFormControlFile1">Upload a picture</label>
+            <label htmlFor="exampleFormControlFile1" className="text-dark">
+              Upload a picture
+            </label>
             <input
               type="file"
-              className="form-control-file"
+              className="form-control-file text-dark"
               id="exampleFormControlFile1"
               name="postImage"
               accept="image/png, image/jpeg"
