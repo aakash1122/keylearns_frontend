@@ -10,16 +10,16 @@ export default function PostFeed(props) {
   props.getAllCourses();
   const courseList = props.courses.map(course => {
     return (
-      <div className="container" id="course-card" key={course.id}>
-        <div className="row text-dark p-2">
-          <div className="col-3">
+      <div className="container shadow" id="course-card" key={course.id}>
+        <div className="row text-dark">
+          <div className="col-3 p-0">
             <img
               className="w-100 h-100"
               src="https://cdn-images-1.medium.com/max/1600/1*H3rm-u6SJiL1IoKIE9OTWg.png"
               alt=""
             />
           </div>
-          <div className="col-7">
+          <div className="col-7 p-2">
             <div className="course-info">
               <h5>{course.title.slice(0, 50)}</h5>
               <p className="courseDesc">{course.description.slice(0, 130)}</p>

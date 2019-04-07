@@ -11,7 +11,7 @@ export default class AddPost extends Component {
 
   componentWillMount() {
     // send back to homepage if unauthorized
-    if (!localStorage.getItem("jwt")) {
+    if (!localStorage.getItem("csrf")) {
       this.props.history.push("/");
     }
   }
@@ -96,7 +96,7 @@ export default class AddPost extends Component {
               />
             </div>
             <label htmlFor="exampleFormControlFile1" className="text-dark">
-              Upload a picture
+              Upload a thumbnail for your course
             </label>
             <input
               type="file"
