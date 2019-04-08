@@ -8,6 +8,7 @@ import Signup from "./components/singup/Signup";
 import AddCourse from "./components/course/AddCourse";
 import CourseFeed from "./components/course/CourseFeed";
 import Dashboard from "./components/dashboard/Dashboard";
+import courseDetail from "./components/course/courseDetail";
 
 class App extends Component {
   state = {
@@ -97,6 +98,7 @@ class App extends Component {
               />
               <Route path="/signup" component={Signup} />
               <Route path="/addcourse" component={AddCourse} />
+              <Route path="/course/:id" component={courseDetail} />
               <Route
                 exact
                 path="/courses"

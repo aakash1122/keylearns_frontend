@@ -6,7 +6,7 @@ export default function Navbar(props) {
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" id="brand" href="/">
             KeyLearns
           </a>
           <button
@@ -22,19 +22,20 @@ export default function Navbar(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <NavLink to="/courses" activeClassName="active">
+              <NavLink to="/courses" id="moveUp" activeClassName="active">
                 Courses
               </NavLink>
               {props.loggedIn ? (
                 <>
-                  <NavLink to="/dashboard" activeClassName="active">
+                  <NavLink to="/dashboard" id="moveUp" activeClassName="active">
                     Dashboard
                   </NavLink>
-                  <NavLink to="/addcourse" activeClassName="active">
+                  <NavLink to="/addcourse" id="moveUp" activeClassName="active">
                     Add Course
                   </NavLink>
                   <NavLink
                     to="/logout"
+                    id="show-danger"
                     activeClassName="active"
                     onClick={props.logout}
                   >

@@ -43,6 +43,9 @@ body {
   padding: 20px 8px;
   background: #fff !important;
 }
+.navbar-expand-lg #brand{
+  color: #e91e63 !important;
+}
 .navbar.navbar-expand-lg a{
   letter-spacing: 1px;
   padding: 3px 8px;
@@ -54,8 +57,13 @@ body {
   margin-left: auto
 }
 
-.navbar.navbar-expand-lg a:hover{
+.navbar.navbar-expand-lg a#moveUp:hover{
   transform: translateY(-5px);
+  transition: all 0.5s  
+}
+.navbar.navbar-expand-lg a#show-danger:hover{
+  background: #dc3545;
+  color:#fff !important;
   transition: all 0.5s  
 }
 
@@ -268,6 +276,41 @@ padding-left: 10px;
   height: 100%;
   width: 100%;
   padding: 5px;
+}
+
+/*  */
+
+/* course Detail */
+.courseDetail #course-header{
+  padding: 20px 20px 20px 15%;
+}
+.courseDetail #course-header-container{
+  background: #29303b;
+  color: #fff
+}
+
+#course-header h3{
+  font-weight: bold;
+  margin: 12px 0px;
+  font-size: 1.9em
+}
+#course-header p{
+  line-height: 1.8em;
+  letter-spacing: 1px;
+}
+#course-header .btn{
+  border-color: none;
+  background: #ff5722;
+  /* #a62fbb */
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+}
+/* rating bar */
+.checked {
+  color: orange;
 }
 
 /*  */
