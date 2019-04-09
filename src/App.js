@@ -37,19 +37,16 @@ class App extends Component {
           Authorization: "Bearer " + this.state.token
         }
       })
-      .then(data =>
-        this.setState(
-          {
-            currentUser: data.data.user
-          },
-          () => console.log("current user : " + this.state.currentUser)
-        )
-      )
+      .then(data => {
+        console.log(data);
+        this.setState({
+          currentUser: data.data.user
+        });
+      })
       .catch(err => console.log(err));
   };
 
   setToken = token => {
-    console.log("token : " + token);
     localStorage.setItem("csrf", token);
     this.setState({
       loggedIn: true,

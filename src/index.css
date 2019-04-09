@@ -51,7 +51,8 @@ body {
   padding: 3px 8px;
   font-weight: bold;
   text-decoration: none !important;
-  color: #474646 !important
+  color: #474646 !important;
+  margin-right: 3px;
 }
 .navbar.navbar-expand-lg .navbar-nav{
   margin-left: auto
@@ -70,7 +71,7 @@ body {
 /*  */
 
 .navbar .navbar-nav .active{
-  border-bottom: 3px solid #e17055 !important;
+  border-bottom: 3px solid #e91e63 !important;
 }
 
 

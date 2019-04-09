@@ -24,7 +24,6 @@ export default class Login extends Component {
     axios
       .post("https://keylearns.herokuapp.com/login/", User)
       .then(data => {
-        console.log(data);
         this.props.sendToken(data.data.access);
         // redirect to dashboard after a succesful login
         this.props.history.push("/dashboard");

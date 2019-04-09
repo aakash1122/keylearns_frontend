@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function EnrolledCourses({ courses }) {
-  console.log(courses);
   const enrolledList = courses.map(course => {
     return (
       <div className="course-card m-2" key={course.course_id}>

@@ -10,34 +10,41 @@ export default class Signup extends Component {
   };
 
   onChangeHandler = e => {
-    this.setState(
-      {
-        [e.target.name]: e.target.value
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   submitHandler = e => {
-    const User = {
-      name: this.state.name,
-      email: this.state.email,
-      username: this.state.username,
-      password: this.state.password
-    };
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("user[image]", this.state.userImage);
+    formData.append("user[email]", this.state.email);
+    formData.append("user[username]", this.state.username);
+    formData.append("user[name]", this.state.name);
+    formData.append("user[password]", this.state.password);
+
     axios
-      .post(
-        "https://keylearns.herokuapp.com/users",
-        { user: User },
-        {
-          withCredentials: false
-        }
-      )
+      .post("https://keylearns.herokuapp.com/register/", formData)
       .then(data => console.log(data))
       .catch(err => console.log("error: " + err));
+  };
+
+  fileChangeHandler = e => {
+    if (e.target.files[0].size > 1048576) {
+      this.setState({
+        ...this.state,
+        error: "File size is larger than 1Mb"
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        userImage: e.target.files[0],
+        error: ""
+      });
+    }
+    console.log(e.target.files[0].size);
   };
 
   render() {
@@ -46,7 +53,11 @@ export default class Signup extends Component {
         <div className="container text-dark">
           <h2 className="text-center">Few Steps to get you started</h2>
           <hr className="w-25 mb-5" />
-          <form className="form-signin w-100" onSubmit={this.submitHandler}>
+          <form
+            className="form-signin w-100"
+            encType="multipart/form-data"
+            onSubmit={this.submitHandler}
+          >
             <div className="form-label-group mt-3">
               <input
                 type="email"
@@ -95,6 +106,18 @@ export default class Signup extends Component {
                 onChange={this.onChangeHandler}
               />
             </div>
+            <label htmlFor="exampleFormControlFile1">
+              Upload a profile picture
+            </label>
+            <input
+              type="file"
+              className="form-control-file"
+              id="exampleFormControlFile1"
+              name="userImage"
+              accept="image/png, image/jpeg"
+              size="1000000"
+              onChange={this.fileChangeHandler}
+            />
             <button
               className="btn btn-lg btn-primary btn-block mt-4"
               type="submit"

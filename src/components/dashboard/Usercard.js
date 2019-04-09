@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function Usercard({ user }) {
+  console.log(user);
   return (
     <div className="user-image-card container text-dark">
       <div className="imagebox left">
         <img
-          src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          alt=""
+          src={`https://keylearns.herokuapp.com/${user.image.url}`}
+          alt="UserImage"
           className="userImage"
         />
       </div>
