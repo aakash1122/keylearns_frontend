@@ -29,16 +29,14 @@ class App extends Component {
   }
 
   getCurrentUser = () => {
-    console.log("Bearer " + this.state.token);
     axios
       .get("https://keylearns.herokuapp.com/profile", {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + this.state.token
+          Authorization: "Bearer " + localStorage.csrf
         }
       })
       .then(data => {
-        console.log(data);
         this.setState({
           currentUser: data.data.user
         });
