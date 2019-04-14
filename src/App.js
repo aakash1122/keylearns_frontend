@@ -26,6 +26,8 @@ class App extends Component {
         token: localStorage.getItem("csrf")
       });
     }
+    //fething courses
+    this.getAllCourses();
   }
 
   getCurrentUser = () => {
@@ -97,12 +99,7 @@ class App extends Component {
               <Route
                 exact
                 path="/courses"
-                render={() => (
-                  <CourseFeed
-                    courses={this.state.courses}
-                    getAllCourses={this.getAllCourses}
-                  />
-                )}
+                render={() => <CourseFeed courses={this.state.courses} />}
               />
               <Route
                 exact

@@ -8,7 +8,6 @@ export default function PostFeed(props) {
     title: "Courses",
     description: "Learn from anywhere, anytime"
   };
-  props.getAllCourses();
   const courseList = props.courses.map(course => {
     return (
       <Link to={`/course/${course.id}`} key={course.id}>
