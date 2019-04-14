@@ -32,16 +32,12 @@ class App extends Component {
 
   getCurrentUser = () => {
     axios
-      .get(
-        "https://keylearns.herokuapp.com/profile",
-        { withCredentials: true },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.csrf
-          }
+      .get("https://keylearns.herokuapp.com/profile", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.csrf
         }
-      )
+      })
       .then(data => {
         this.setState({
           currentUser: data.data.user
@@ -74,7 +70,7 @@ class App extends Component {
 
   getAllCourses = () => {
     axios
-      .get("https://keylearns.herokuapp.com/courses", { withCredentials: true })
+      .get("https://keylearns.herokuapp.com/courses")
       .then(data => {
         this.setState({
           courses: data.data.courses
