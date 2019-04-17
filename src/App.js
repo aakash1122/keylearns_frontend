@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import axios from "axios";
+import HttpsRedirect from "react-https-redirect";
 // components
 import Navbar from "./components/navbar/Navbar";
 import LandingPage from "./components/landingPage/LandingPage";
@@ -82,38 +83,40 @@ class App extends Component {
   render() {
     return (
       <>
-        <BrowserRouter>
-          <div>
-            <Navbar loggedIn={this.state.loggedIn} logout={this.logout} />
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <LandingPage {...props} sendToken={this.setToken} />
-                )}
-              />
-              <Route path="/signup" component={Signup} />
-              <Route path="/addcourse" component={AddCourse} />
-              <Route path="/course/:id" component={courseDetail} />
-              <Route
-                exact
-                path="/courses"
-                render={() => <CourseFeed courses={this.state.courses} />}
-              />
-              <Route
-                exact
-                path="/dashboard"
-                render={() => (
-                  <Dashboard
-                    getUser={this.getCurrentUser}
-                    user={this.state.currentUser}
-                  />
-                )}
-              />
-            </Switch>
-          </div>
-        </BrowserRouter>
+        <HttpsRedirect>
+          <BrowserRouter>
+            <div>
+              <Navbar loggedIn={this.state.loggedIn} logout={this.logout} />
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={props => (
+                    <LandingPage {...props} sendToken={this.setToken} />
+                  )}
+                />
+                <Route path="/signup" component={Signup} />
+                <Route path="/addcourse" component={AddCourse} />
+                <Route path="/course/:id" component={courseDetail} />
+                <Route
+                  exact
+                  path="/courses"
+                  render={() => <CourseFeed courses={this.state.courses} />}
+                />
+                <Route
+                  exact
+                  path="/dashboard"
+                  render={() => (
+                    <Dashboard
+                      getUser={this.getCurrentUser}
+                      user={this.state.currentUser}
+                    />
+                  )}
+                />
+              </Switch>
+            </div>
+          </BrowserRouter>
+        </HttpsRedirect>
       </>
     );
   }
