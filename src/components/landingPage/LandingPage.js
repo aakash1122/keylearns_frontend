@@ -38,7 +38,7 @@ export default function LandingPage(props) {
           <h1 className="text-center mb-5 mt-2">We are Offering</h1>
           <div className="container">
             <div className="row  text-center">
-              <div className="col-md-4">
+              <div className="col-md-4" data-aos="fade-up">
                 <div className="d-flex flex-column offer">
                   <i className="fas fa-globe-americas fa-3x" />
                   <h3>Courses on trending technologies</h3>
@@ -50,7 +50,7 @@ export default function LandingPage(props) {
                   </p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4" data-aos="fade-up">
                 <div className="d-flex flex-column offer">
                   <i className="fas fa-swatchbook fa-3x" />
                   <h3>Rich Library</h3>
@@ -62,7 +62,7 @@ export default function LandingPage(props) {
                   </p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4" data-aos="fade-up">
                 <div className="d-flex flex-column offer">
                   <i className="fas fa-chalkboard-teacher fa-3x" />
                   <h3>Community support</h3>
