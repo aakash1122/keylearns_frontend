@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
+import CourseCard from "./CourseCard";
 
 export default class courseDetail extends Component {
-  componentDidMount() {
-    // axios.get()
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -32,6 +30,43 @@ export default class courseDetail extends Component {
             <button className="btn btn-lg mt-2">Enroll Now</button>
           </div>
           <div className="col-sm-5" />
+        </div>
+        <div className="row" id="course-content-section">
+          <div className="col-md-6">
+            <div className="course-files" id="scrollable">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+              <h3>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum,
+                dicta.
+              </h3>
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h3>Lorem ipsum dolor sit.</h3>
+              <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+              <h3>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum,
+                dicta.
+              </h3>
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h3>Lorem ipsum dolor sit.</h3>
+              <h3>Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="video-player" />
+          </div>
+        </div>
+        <div className="suggestion bg-dark text-light">
+          <h3>Similar Courses</h3>
+          <div className="suggested-courses d-flex flex-md-row justify-content-center flex-wrap mt-5 p-3">
+            <CourseCard />
+            <CourseCard />
+            <CourseCard />
+            <CourseCard />
+            <CourseCard />
+          </div>
         </div>
       </div>
     );

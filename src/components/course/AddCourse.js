@@ -4,8 +4,8 @@ import axios from "axios";
 export default class AddPost extends Component {
   state = {
     title: "",
-    postDetail: "",
-    postImage: null,
+    courseDetail: "",
+    thumbnail: null,
     error: ""
   };
 
@@ -19,9 +19,9 @@ export default class AddPost extends Component {
   submitHandler = e => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("postImage", this.state.postImage);
+    formData.append("thumbnail", this.state.thumbnail);
     formData.append("title", this.state.title);
-    formData.append("postDetail", this.state.postDetail);
+    formData.append("courseDetail", this.state.postDetail);
     if (!this.state.error) {
       axios
         .post("http://localhost:5000/post/new", formData, {
@@ -81,7 +81,7 @@ export default class AddPost extends Component {
                 autoFocus=""
                 name="title"
                 minLength={20}
-                maxLength={85}
+                maxLength={80}
                 onChange={this.onChangeHandler}
               />
             </div>
@@ -92,21 +92,61 @@ export default class AddPost extends Component {
                 cols="20"
                 name="postDetail"
                 onChange={this.onChangeHandler}
-                placeholder="Post Detail goes here"
+                placeholder="Short description about this course ..."
               />
             </div>
-            <label htmlFor="exampleFormControlFile1" className="text-dark">
-              Upload a thumbnail for your course
-            </label>
+            {/*Programming Language names */}
+            <h5 className="text-dark mt-5">Languages / Tools</h5>
+            <div className="row">
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Ex: HTML"
+                  required={true}
+                />
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Ex: Javascript"
+                />
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Ex: IOS"
+                />
+              </div>
+            </div>
             <input
-              type="file"
-              className="form-control-file text-dark"
-              id="exampleFormControlFile1"
-              name="postImage"
-              accept="image/png, image/jpeg"
-              size={1000000}
-              onChange={this.fileChangeHandler}
+              type="text"
+              className="form-control mt-3"
+              placeholder="Requirements"
+              required={true}
+              autoFocus=""
+              name="title"
+              minLength={10}
+              maxLength={100}
+              onChange={this.onChangeHandler}
             />
+            {/* thumbnile and content */}
+            <div className="file-upload-section mt-5 mb-5">
+              <label htmlFor="exampleFormControlFile1" className="text-dark">
+                Upload a thumbnail for your course
+              </label>
+              <input
+                type="file"
+                className="form-control-file text-dark"
+                id="exampleFormControlFile1"
+                name="postImage"
+                accept="image/png, image/jpeg, image/jpg"
+                size={1000000}
+                onChange={this.fileChangeHandler}
+              />
+            </div>
             <button
               className="btn btn-lg btn-primary btn-block mt-4"
               type="submit"

@@ -6,7 +6,7 @@ export default function Usercard({ user }) {
     <div className="user-image-card container text-dark">
       <div className="imagebox left">
         <img
-          src={`https://keylearns.herokuapp.com/${user.image.url}`}
+          src={`https://keylearns.herokuapp.com${user.image.url}`}
           alt="UserImage"
           className="userImage"
         />
