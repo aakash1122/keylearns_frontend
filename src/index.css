@@ -340,3 +340,21 @@ padding-left: 10px;
 }
 
 /*  */
+/* Add course Form */
+.ReactTags__tagInputField{ width: 278px;
+  height: 42px; 
+  padding: 8px;
+  border-radius: 5px; 
+  font-size: 20px;
+   -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px;
+   border: 1px solid #ced4da;
+}
+.tag-wrapper.ReactTags__tag{
+  color: #000 !important;
+  display: inline-block;
+  margin: 5px;
+  font-size: 20px;
+}
+.form-control{
+  font-size: 20px;
+}

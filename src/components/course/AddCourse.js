@@ -1,11 +1,22 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { WithContext as ReactTags } from "react-tag-input";
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 export default class AddPost extends Component {
   state = {
     title: "",
-    courseDetail: "",
-    thumbnail: null,
+    description: "",
+    featuredImage: null,
+    tags: [],
+    requirements: null,
+    price: null,
     error: ""
   };
 
@@ -18,21 +29,41 @@ export default class AddPost extends Component {
 
   submitHandler = e => {
     e.preventDefault();
+    const initialCourse = {
+      title: this.state.title,
+      description: {
+        courseInfo: this.state.courseDetail,
+        courseRequirements: this.state.requirements
+      },
+      price: this.state.price,
+      featuredImage: this.state.featuredImage,
+      tags: this.state.tags
+    };
+    console.log(initialCourse);
+
     const formData = new FormData();
-    formData.append("thumbnail", this.state.thumbnail);
+    formData.append("price", this.state.price);
     formData.append("title", this.state.title);
-    formData.append("courseDetail", this.state.postDetail);
-    if (!this.state.error) {
-      axios
-        .post("http://localhost:5000/post/new", formData, {
-          withCredentials: true
-        })
-        .then(post => {
-          console.log(post);
-          this.props.history.push("/posts");
-        })
-        .catch(err => console.log(err));
-    }
+    formData.append("courseDetail", this.state.courseDetail);
+    formData.append("featuredImage", this.state.featuredImage);
+
+    axios
+      .post(
+        "https://keylearns.herokuapp.com/courses",
+        {
+          course: initialCourse
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.csrf
+          }
+        }
+      )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
   };
 
   onChangeHandler = e => {
@@ -41,27 +72,44 @@ export default class AddPost extends Component {
     });
   };
 
-  // fileChangeHandler = e => {
-  //   if (e.target.files[0].size > 1048576) {
-  //     this.setState({
-  //       ...this.state,
-  //       error: "File size is larger than 1Mb"
-  //     });
-  //   } else {
-  //     this.setState(
-  //       {
-  //         postImage: e.target.files[0],
-  //         error: ""
-  //       },
-  //       () => {
-  //         console.log("updated : ", this.state);
-  //       }
-  //     );
-  //   }
-  //   console.log(e.target.files[0].size);
-  // };
+  // tags input methods
+  handleDelete = i => {
+    const { tags } = this.state;
+    this.setState({
+      tags: tags.filter((tag, index) => index !== i)
+    });
+  };
+
+  handleAddition = tag => {
+    if (this.state.tags.length <= 4) {
+      this.setState(state => ({ tags: [...state.tags, tag] }));
+    }
+  };
+
+  handleDrag = (tag, currPos, newPos) => {
+    const tags = [...this.state.tags];
+    const newTags = tags.slice();
+
+    newTags.splice(currPos, 1);
+    newTags.splice(newPos, 0, tag);
+
+    // re-render
+    this.setState({ tags: newTags });
+  };
+
+  fileChangeHandler = e => {
+    this.setState(
+      {
+        featuredImage: e.target.files[0]
+      },
+      () => {
+        console.log("updated : ", this.state);
+      }
+    );
+  };
 
   render() {
+    const { tags } = this.state;
     return (
       <div className="container">
         <div className="p-fixed mt-5">
@@ -90,36 +138,10 @@ export default class AddPost extends Component {
                 className="form-control"
                 rows="12"
                 cols="20"
-                name="postDetail"
+                name="description"
                 onChange={this.onChangeHandler}
                 placeholder="Short description about this course ..."
               />
-            </div>
-            {/*Programming Language names */}
-            <h5 className="text-dark mt-5">Languages / Tools</h5>
-            <div className="row">
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Ex: HTML"
-                  required={true}
-                />
-              </div>
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Ex: Javascript"
-                />
-              </div>
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Ex: IOS"
-                />
-              </div>
             </div>
             <input
               type="text"
@@ -127,11 +149,35 @@ export default class AddPost extends Component {
               placeholder="Requirements"
               required={true}
               autoFocus=""
-              name="title"
+              name="requirements"
               minLength={10}
               maxLength={100}
               onChange={this.onChangeHandler}
             />
+            {/*Tags */}
+            <div className="mt-3">
+              <h6 className="text-dark">Add Tags (max: 5) </h6>
+              <ReactTags
+                tags={tags}
+                handleDelete={this.handleDelete}
+                handleAddition={this.handleAddition}
+                handleDrag={this.handleDrag}
+                delimiters={delimiters}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                className="form-control mt-3 w-25"
+                placeholder="Price "
+                required={true}
+                autoFocus=""
+                name="price"
+                minLength={3}
+                maxLength={5}
+                onChange={this.onChangeHandler}
+              />
+            </div>
             {/* thumbnile and content */}
             <div className="file-upload-section mt-5 mb-5">
               <label htmlFor="exampleFormControlFile1" className="text-dark">
@@ -141,17 +187,17 @@ export default class AddPost extends Component {
                 type="file"
                 className="form-control-file text-dark"
                 id="exampleFormControlFile1"
-                name="postImage"
+                name="featuredImage"
                 accept="image/png, image/jpeg, image/jpg"
                 size={1000000}
                 onChange={this.fileChangeHandler}
               />
             </div>
             <button
-              className="btn btn-lg btn-primary btn-block mt-4"
+              className="btn btn-lg btn-primary btn-block mt-4 mb-2"
               type="submit"
             >
-              Publish
+              Submit
             </button>
           </form>
         </div>
