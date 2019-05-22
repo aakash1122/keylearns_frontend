@@ -29,37 +29,30 @@ export default class AddPost extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    const initialCourse = {
-      title: this.state.title,
-      description: {
-        courseInfo: this.state.courseDetail,
-        courseRequirements: this.state.requirements
-      },
-      price: this.state.price,
-      featuredImage: this.state.featuredImage,
-      tags: this.state.tags
-    };
-    console.log(initialCourse);
 
-    const formData = new FormData();
-    formData.append("price", this.state.price);
-    formData.append("title", this.state.title);
-    formData.append("courseDetail", this.state.courseDetail);
-    formData.append("featuredImage", this.state.featuredImage);
+    const tags = this.state.tags.map(tag => {
+      return tag.text;
+    });
 
+    var course = new FormData();
+    course.append("course[title]", this.state.title);
+    course.append("course[description]", this.state.description);
+    course.append("course[featuredImage]", this.state.featuredImage);
+    course.append("course[requirements]", this.state.requirements);
+    course.append("course[price]", this.state.price);
+    // appeanding tags in course
+    for (var i = 0; i < tags.length; i++) {
+      course.append("course[tags][]", tags[i]);
+    }
+
+    console.log(course);
     axios
-      .post(
-        "https://keylearns.herokuapp.com/courses",
-        {
-          course: initialCourse
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.csrf
-          }
+      .post("https://keylearns.herokuapp.com/courses", course, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.csrf
         }
-      )
+      })
       .then(res => {
         console.log(res);
       })
