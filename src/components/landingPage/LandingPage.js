@@ -7,9 +7,9 @@ export default function LandingPage(props) {
   return (
     <div>
       <div id="landingPage">
-        <div className="container-fluid row text-center hero">
+        <div className="container-fluid row hero">
           <div className="col-md left d-flex justify-content-center align-items-center">
-            <Typist
+            {/* <Typist
               cursor={{
                 show: true,
                 blink: true,
@@ -26,7 +26,21 @@ export default function LandingPage(props) {
               <br />
               <Typist.Delay ms={1000} />
               <h4>Courses of your need</h4>
-            </Typist>
+            </Typist> */}
+            <div className="hero-text">
+              <h1>
+                Welcome to <b>KeyLearns</b>
+              </h1>
+              <p>
+                Learn Anywher <span> | </span> Learn anytime
+              </p>
+              <button className="btn btn-danger btn-lg mt-2">
+                Explore courses
+              </button>
+              <button className="btn btn-danger btn-lg mt-2" id="join-btn">
+                Join Now
+              </button>
+            </div>
           </div>
           <div className="col-md right d-flex justify-content-center align-items-center">
             {/* login component */}
@@ -35,50 +49,49 @@ export default function LandingPage(props) {
         </div>
         {/* offer section */}
         <section className="offering text-dark pt-5">
-          <h1 className="text-center mb-5 mt-2">We are Offering</h1>
-          <div className="container">
-            <div className="row  text-center">
-              <div className="col-md-4" data-aos="fade-up">
-                <div className="d-flex flex-column offer">
-                  <i className="fas fa-globe-americas fa-3x" />
-                  <h3>Courses on trending technologies</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eligendi, consequatur voluptas itaque officiis non voluptate
-                    possimus dolore et distinctio vel harum laborum odio ab iure
-                    quod.
-                  </p>
+          <h1 className="text-center mb-5 mt-2">
+            <span className="slash">//</span> What's in the box ?{" "}
+            <span className="slash">//</span>
+          </h1>
+          <div className="container mt-3">
+            <div className="row">
+              <div className="col-sm-6 p-3">
+                <div className="card">
+                  <div className="card-body text-center">
+                    <i className="fas fa-globe-americas fa-3x" />
+                    <h3>Courses On Trending Technologies</h3>
+                  </div>
                 </div>
               </div>
-              <div className="col-md-4" data-aos="fade-up">
-                <div className="d-flex flex-column offer">
-                  <i className="fas fa-swatchbook fa-3x" />
-                  <h3>Rich Library</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eligendi, consequatur voluptas itaque officiis non voluptate
-                    possimus dolore et distinctio vel harum laborum odio ab iure
-                    quod.
-                  </p>
+              <div className="col-sm-6 p-3">
+                <div className="card">
+                  <div className="card-body text-center">
+                    <i className="fas fa-swatchbook fa-3x" />
+                    <h3>Rich Library & Qualityful Content</h3>
+                  </div>
                 </div>
               </div>
-              <div className="col-md-4" data-aos="fade-up">
-                <div className="d-flex flex-column offer">
-                  <i className="fas fa-chalkboard-teacher fa-3x" />
-                  <h3>Community support</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eligendi, consequatur voluptas itaque officiis non voluptate
-                    possimus dolore et distinctio vel harum laborum odio ab iure
-                    quod.
-                  </p>
+              <div className="col-sm-6 p-3">
+                <div className="card">
+                  <div className="card-body text-center">
+                    <i class="fas fa-3x fa-users" />
+                    <h3>Community Support</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6 p-3">
+                <div className="card">
+                  <div className="card-body text-center">
+                    <i class="fas fa-3x fa-desktop" />
+                    <h3>LifeTime Access</h3>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
         <section className="bangla p-5 mt-5">
-          <h2 className="text-center">All the courses are in Bangla</h2>
+          <h2 className="text-center">All the courses are in Bangla </h2>
         </section>
       </div>
     </div>

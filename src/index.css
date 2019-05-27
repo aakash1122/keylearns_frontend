@@ -1,6 +1,7 @@
 /* import */
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Montserrat'); */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
 /* variables */
 :root {
   --main-bg-color: #1da7da;
@@ -28,10 +29,8 @@ a{
 body {
   margin: 0;
   padding: 0;
-  /* font-family: 'Poppins', sans-serif;
-   */
-   font-family: 'Montserrat', sans-serif;
-   -webkit-font-smoothing: antialiased;
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background: #fff;
@@ -44,7 +43,9 @@ body {
   background: #fff !important;
 }
 .navbar-expand-lg #brand{
-  color: #e91e63 !important;
+  color: #dc3545bd !important;
+  font-weight: 800;
+  font-size: 28px;
 }
 .navbar.navbar-expand-lg a{
   letter-spacing: 1px;
@@ -84,18 +85,64 @@ body {
 }
 
 #landingPage .hero{
-  min-height: 70vh !important;
-  background: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.644)), url("https://images.pexels.com/photos/68761/pexels-photo-68761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  min-height: 73vh !important;
+  background: linear-gradient(to right,#f2709c47, #ff947252),url("./BG/avi-richards-183715-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;   
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%); */
+  /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%);
+clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%); */
 }
 
 #landingPage .left h1{
   font-size: 50px;
   letter-spacing: 2px;
+  font-weight: bold;
+  text-align: left
+}
+
+#landingPage .hero-text{
+  width: 600px;
+  margin-left: 55px;
+}
+#landingPage .hero-text button{
+  background: #dc3545bd;
+  color:#fff;
+  border-color: none;
+}
+#landingPage .hero-text #join-btn{
+  margin-left: 20px;
+  border: 1px solid #ffc107;
+  color:#fff;
+  background: transparent;
+  letter-spacing: 3px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+#landingPage .hero-text #join-btn:hover{
+  background: #ffc107;
   font-weight: bold
+}
+#landingPage .hero-text #join-btn:active{
+  border: #ffc107
+}
+
+#landingPage .hero-text h1{
+  font-size: 3.2em;
+}
+#landingPage .hero-text p{
+  margin-top: 12px;
+  font-size: 1.6em;
+  text-align: left;
+  word-break: break-all
+}
+#landingPage .hero-text p span{
+  color: #ffc107;
+  font-size: 36px !important;
+  font-weight: 900
 }
 
 #landingPage span.keylearns{
@@ -107,53 +154,68 @@ body {
 #login{
   text-align: start;
   padding: 20px;
-  background: #26272787
+  /* background: #26272787; */
+  background: #26272787;
+  width: 445px;
 }
 
 #login  input{
-  width: 450px;
+  width: 100% !important;
+  height: 50px;
 }
 
 #login button {
-  background: #e91e63;
+  background: #dc3545bd;;
   border-color: none !important
 }
 
 #login #create-acc-link{
-  color: #ffeb00;
+  color: #ffc107;
   padding: 0 5px;
   text-transform: uppercase
 }
 /*  */
 
 /* offering */
-.offering {
-  font-family: "Poppins", sans-serif
+.offering .row h3{
+    padding: 25px;
+    text-align: center;
+    color: #847a7a;
+}
+.offering .row .card{
+  background: whitesmoke;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.offering .row .card:hover{
+  -webkit-box-shadow: 11px 11px 25px 8px rgba(196,196,196,1);
+  -moz-box-shadow: 11px 11px 25px 8px rgba(196,196,196,1);
+  box-shadow: 11px 11px 25px 8px rgba(196,196,196,1);
 }
 
-.offering .offer{
-  padding: 25px 12px;
-  transition: all 0.5s
+.offering .row .card i {
+  color:#dc3545bd
 }
 
 .offering h1{
   color: #73746b !important;
+  position: relative;
 }
 
-
-.offering .offer i{
-  color: #37474f;
-  margin-bottom: 10px;
-}
-
-.offering .offer:hover{
-  transform: scale(1.1)
+span.slash{
+    color: #ffc107;
+    font-size: 50px;
+    margin: 0 30px 0 30px;
 }
 
 .bangla{
   background: #383d41;
   letter-spacing: 4px;
-  font-family: monospace
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 /* Sign up */
