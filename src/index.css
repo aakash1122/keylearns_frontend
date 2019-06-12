@@ -23,13 +23,14 @@ a{
 .jumbotron-fluid{
   background: linear-gradient(270deg, #E84118, #AB3B85);
   letter-spacing: 4px;
-  font-family: cursive;
+  font-family: monospace;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Nunito Sans', sans-serif;
+  /* font-family: 'Nunito Sans', sans-serif; */
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
@@ -38,7 +39,7 @@ body {
 
 /* Nav Bar */
 .navbar.navbar-expand-lg {
-  font-size: 17px;
+  font-size: 20px;
   padding: 20px 8px;
   background: #fff !important;
 }
@@ -104,6 +105,7 @@ clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%); */
 #landingPage .hero-text{
   width: 600px;
   margin-left: 55px;
+  font-size: 15px;
 }
 #landingPage .hero-text button{
   background: #dc3545bd;
@@ -157,6 +159,7 @@ clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%); */
   /* background: #26272787; */
   background: #26272787;
   width: 445px;
+  font-family: "Nunito Sans"
 }
 
 #login  input{
@@ -177,8 +180,21 @@ clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%); */
 /*  */
 
 /* offering */
+.offering-bangla{
+  padding: 28px;
+  background: #dc3545bd;
+  color: #fff !important
+}
+
+.offering{
+  font-family: monospace;
+  background-color: #ffffff;
+background-image: url("./BG/offering.svg");
+background-attachment: fixed;
+}
+
 .offering .row h3{
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     color: #847a7a;
 }
@@ -204,11 +220,13 @@ clip-path: polygon(0 0, 100% 0, 100% 71%, 0 100%); */
 .offering h1{
   color: #73746b !important;
   position: relative;
+  font-size: 29px;
+  font-weight: bolder
 }
 
 span.slash{
     color: #ffc107;
-    font-size: 50px;
+    font-size: 40px;
     margin: 0 30px 0 30px;
 }
 
@@ -240,6 +258,9 @@ span.slash{
 
 
 /* course feed */
+#suggestion{
+  background: #FAFAFA !important
+}
 
 #course-card{
   /* max-height: 150px; */
@@ -391,8 +412,8 @@ padding-left: 10px;
 }
 
 .suggested-courses .card{
-  width: 15rem;
-  margin: 8px 10px;
+  width: 259px;
+  margin: 8px 20px;
 }
 
 .suggestion h3{
