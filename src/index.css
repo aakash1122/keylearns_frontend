@@ -87,7 +87,7 @@ body {
 
 #landingPage .hero{
   min-height: 73vh !important;
-  background: linear-gradient(to right,#f2709c47, #ff947252),url("./BG/avi-richards-183715-unsplash.jpg");
+  background: linear-gradient(to right,#510a32ad, #510a32cc),url("./BG/avi-richards-183715-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;   
@@ -257,9 +257,9 @@ span.slash{
 }
 
 
-/* course feed */
+/* course feed  suggestion*/
 #suggestion{
-  background: #FAFAFA !important
+  background: #f7f7f7 !important;
 }
 
 #course-card{
@@ -268,7 +268,7 @@ span.slash{
   background: #fbfbfb;
   margin: 10px;
   border-top: 1px solid #e5e5e5;
-  cursor: pointer
+  cursor: pointer;
 }
 
 #course-card h5{

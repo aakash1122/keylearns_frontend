@@ -91,11 +91,14 @@ export default function LandingPage(props) {
             <CourseCard />
             <CourseCard />
           </div>
-          <button className="btn btn-danger btn-lg mt-2 mb-5" id="join-btn">
+          <button className="btn btn-danger btn-lg mt-3 mb-5" id="join-btn">
             Browse More
           </button>
         </div>
       </div>
+      <footer>
+        <h3 className="p-5 m-0 text-dark text-center">© KeyLearns 2019</h3>
+      </footer>
     </div>
   );
 }
